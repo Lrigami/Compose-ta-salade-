@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- inclusion des polices d'écriture -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <title>Compose ta salade !</title>
+    <!-- inclusion de la feuille de styles CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- inclusion des données et des scripts JS pour faire fonctionner l'application -->
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="popup.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div id="rectangleAffichage">
+        <img id= "logo" src="salade.png" alt="image de salade composée">
+        <div id="demiEllipse">
+            <h1>Salade</h1>
+        </div>
+        <header>
+                <h2>L'application qui t'aide à créer la salade de tes rêves.</h2>
+                <h3>Compose ta salade ! est une application qui permet de composer des salades avec des ingrédients toujours de saison.</h3>
+        </header>
+
+        <main>
+            <h4 id="texteOptions"></h4>
+            <div id="options" class="optionsContainer"></div>
+
+            <!-- <div id="bouton-arriere"></div> à faire si j'ai le temps, pas compliqué --> 
+            <div id="bouton-valider"></div>
+
+            <div id="retryorshare" class="cache">
+                <p>Voici les ingrédients sélectionnés pour votre superbe salade :</p>
+                <div id="récapitulatif"></div>
+                <div id="boutonsRetryOrShare">
+                    <input id="retry" type="button" value="Recommencer">
+                    <input id="share" type="button" value="Partager">
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="popup" class="cache">
+        <div id="popupCadre">
+            <div id="texte-partage">Partagez votre salade !</div>
+            <form novalidate>
+                <div id="formNom">
+                    <label for="nom">Votre nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom">
+                </div>
+                <div id="formEmail">
+                    <label for="email">Avec qui voulez-vous partager votre salade ?</label>
+                    <input type="email" id="email" name="email" placeholder="nom@domaine.com">
+                </div>
+                <div id="formBouton">
+                    <button id="btnEnvoyerMail">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

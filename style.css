@@ -1,0 +1,388 @@
+/* Pour mettre en forme l'application je souhaite :
+- transformer les choix en cartes à cliquer
+- application aux couleurs vertes et blanches
+- au centre de la page
+- responsive sur téléphone (s'adapte à la largeur de l'écran) */
+
+.cache {
+    display: none;
+}
+
+/* Styles généraux du body : fond, polices, couleurs, bordures, marges, boutons ... */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+#rectangleAffichage {
+    width: 50%;
+    height: 80%;
+    background-color: rgb(253, 249, 242);
+    border-radius: 5%;
+    border: 4px solid #79a57b;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#demiEllipse {
+    position: relative;
+    width: 100%;
+    height: 35%;
+    background-color: #79a57b;
+    border-radius: 0 0 50% 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    max-height: 30%;
+    z-index: 1;
+    margin-top: 1%;
+}
+
+h1 {
+    font-family: 'Nerko One', cursive;
+    font-optical-sizing: auto;
+    font-size: 1000%;
+    color: #ffffff;
+    margin: 0;
+}
+
+main {
+    text-align: center;
+    position: relative;
+    margin: auto;
+    overflow: scroll;
+    padding-bottom: 10px;
+}
+
+h2, h3, h4, #retryorshare p, #récapitulatif, #texte-partage, label {
+    font-family: "Source Sans 3", sans-serif;
+    color: #064d0a;
+}
+
+h2, h3 {
+    max-width: 80%;
+}
+
+h3 {
+    margin-bottom: 0;
+}
+
+h4 {
+    align-content: center;
+    justify-self: top;
+    align-self: top;
+}
+
+input[type=button], #btnEnvoyerMail {
+    background-color: #79a57b;
+    color: #ffffff;
+    font-family: "Nerko One", cursive;
+    font-weight: 100;
+    text-align: center;
+    border-radius: 10%;
+    padding: 10px 40px 10px 40px;
+    width: 200px;
+    font-size: large;
+}
+
+#bouton-valider, #boutonsRetryOrShare {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Styles des images cliquables : transformer les boutons radio et checkbox en images cliquables + ombre et cercle qui apparait quand c'est cliqué */
+
+.optionsContainer {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.ensembleCarte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.carteOption {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    border: 2px solid #79a57b;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer ;
+    transition: transform 0.3s;
+    align-content: center;
+    margin: auto;
+}
+
+.carteOption img {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    object-fit: scale-down;
+    border-radius: 50%;
+}
+
+.carteOption.selected {
+    border-color: #064d0a;
+    transform: scale(1.05);
+}
+
+/* Styles du popup formulaire de partage */
+
+#popup {
+    background-color: rgb(253, 249, 242);
+    border-radius: 5%;
+    border: 4px solid #79a57b;
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    z-index: 1;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#popupCadre {
+    position: relative;
+    overflow: scroll;
+}
+
+#texte-partage {
+    text-align: center;
+    font-size: 200%;    
+    padding-top: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+#formNom, #formEmail, #formBouton {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 60%;
+    text-align: center;
+}
+
+#formBouton {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/* Styles responsive pour téléphone + ne pas oublier d'ajouter les icônes manquantes pour les mois */
+
+ /* En dessous de 1200 px */
+ @media screen and (max-width: 1200px) {
+    #rectangleAffichage {
+        width: 100%;
+        height: 95%;
+        gap: 20px;
+    }
+
+    #demiEllipse {
+        height: 20%;
+    }
+
+    header {
+        height: 200px;
+        padding-top: 100px;
+    }
+
+    #logo {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    max-height: 20%;
+    padding-top: 2%;
+    }
+
+    h2, h3 {
+        font-size: 150%;
+    }
+
+    h4, #retryorshare p, #récapitulatif, #texte-partage {
+        font-size: 200%;
+    }
+
+    .carteOption {
+        width: 120px;
+        height: 120px;
+    }
+
+    input[type="button"], #btnEnvoyerMail {
+        margin-top: 20px;
+        width: 400px;
+        height: 75px;
+        font-size: 200%;
+        margin-bottom: 20px;
+    }
+
+    #retryorshare {
+        max-width: 90%;
+        margin: auto;
+    }
+
+    #boutonsRetryOrShare input[type=button] {
+        width: 300px;
+    }
+
+    #popup {
+        width: 70%;
+        height: 50%;
+    }
+
+    #popupCadre {
+        position: relative;
+        overflow: scroll;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: auto;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #texte-partage {
+        font-size: 180%;
+    }
+
+    form {
+        gap: 20px;
+    }
+
+    form label {
+        font-size: 180%;
+    }
+
+    form input {
+        height: 40px;
+        border-radius: 5%;
+        border: 2px solid #79a57b;
+    }
+
+    #formBouton {
+        max-width: 100%;
+    }
+}
+
+
+/* En dessous de 700 px */
+@media screen and (max-width: 700px) {
+    body {
+        overflow: hidden;
+    }
+
+    #rectangleAffichage {
+        width: 100%;
+        height: 100%;
+        gap: 5px;
+        border-radius: 0 0 0 0;
+    }
+
+    #demiEllipse {
+        height: 15%;
+    }
+
+    header {
+        height: 150px;
+        padding-top: 50px;
+    }
+
+    h1 {
+        font-size: 500%;
+    }
+
+    h2, h3 {
+        font-size: 100%;
+    }
+
+    h4, #retryorshare p, #récapitulatif, #texte-partage {
+        font-size: 100%;
+    }
+
+    .carteOption {
+        width: 60px;
+        height: 60px;
+    }
+
+    input[type="button"], #btnEnvoyerMail {
+        margin-top: 20px;
+        width: 70%;
+        height: 75px;
+        font-size: 200%;
+        margin-bottom: 20px;
+    }
+
+    #retryorshare {
+        max-width: 90%;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    #boutonsRetryOrShare {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    #boutonsRetryOrShare input[type=button], #btnEnvoyerMail {
+        margin: auto;
+    }
+
+    #popupCadre {
+        gap: 15px;
+    }
+
+    form {
+        gap: 15px;
+    }
+
+    form label {
+        font-size: 100%;
+    }
+
+    #btnEnvoyerMail {
+        max-width: 100%;
+        width: 100%;
+        font-size: 150%;
+        text-align: center;
+    }
+}
