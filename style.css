@@ -333,6 +333,7 @@ form {
 
     h2, h3 {
         font-size: 100%;
+        overflow: auto;
     }
 
     h4, #retryorshare p, #récapitulatif, #texte-partage {
