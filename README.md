@@ -44,3 +44,7 @@ To go further:
 - [ ] 7. Display statistics in the user profile (number of salads created, most added ingredients, etc.).
 
 Feel free to check my progress !
+
+
+--- attributions: --- 
+<a href="https://www.flaticon.com/free-icons/vegetables" title="vegetables icons" target="_blank">All icons on Flaticon</a>
