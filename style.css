@@ -304,6 +304,54 @@ form {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    h2, h3 {
+        font-size: 140%;
+    }
+
+    h4 {
+        font-size: 120%;
+    }
+
+    .carteOption {
+        width: 60px;
+        height: 60px;
+    }
+
+    input[type="button"] {
+        width: 220px !important;
+        height: 55px;
+        font-size: 120%;
+        cursor: pointer;
+    }
+
+    #retryorshare p, #récapitulatif {
+        font-size: 120%;
+    }
+
+    #popupCadre {
+        height: 98%;
+        display: unset;
+    }
+
+    #texte-partage {
+        font-size: 120%;
+    }
+
+    form label {
+        font-size: 100%;
+    }
+
+    #formBouton button {
+        padding: 0;
+        margin: 0 auto;
+        width: 220px !important;
+        height: 55px;
+        font-size: 120%;
+        cursor: pointer;
+    }
+}
+
 
 /* En dessous de 700 px */
 @media screen and (max-width: 700px) {
